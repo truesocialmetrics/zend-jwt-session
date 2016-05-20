@@ -15,10 +15,12 @@
     "require": {
         "php": ">=5.5",
         "ext-openssl": "*",
+        "ext-zlib": "*",
 
         "zendframework/zend-session": "*",
         "zendframework/zend-http": "*",
         "zendframework/zend-stdlib": "*",
+
         "necromant2005/zend-generator": "*"
     },
     "autoload": {

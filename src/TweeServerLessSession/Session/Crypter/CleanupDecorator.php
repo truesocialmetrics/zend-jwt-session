@@ -21,14 +21,17 @@ class CleanupDecorator extends AbstractDecorator
 
         $session['__ZF'] = reset($session['__ZF']['_VALID']);
 
-        return $this->getCrypter()->encrypt(serialize($session));
+        return $this->getCrypter()->encrypt(gzencode(serialize($session), 9));
     }
 
     public function decrypt($crypted)
     {
         $crypted = $this->getCrypter()->decrypt($crypted);
+        $session = unserialize(gzdecode($crypted));
 
-        $session = unserialize($crypted);
+        if (!is_array($session)) {
+            throw new \RuntimeException('Session corupted');
+        }
         $session = array_map(function($value) {
             if (is_array($value)) {
                 return new ArrayObject($value);
