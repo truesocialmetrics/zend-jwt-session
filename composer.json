@@ -1,0 +1,28 @@
+{
+    "name": "necromant2005/tt-serverless-session",
+    "type": "library",
+    "description": "Server less session (store all data in browser cookies)",
+    "keywords": ["serverless", "session"],
+    "homepage": "https://github.com/necromant2005/tt-serverless-session",
+    "authors": [
+        {
+            "name": "Rostislav Mykhajliw",
+            "email": "necromant2005@gmail.com",
+            "homepage": "https://github.com/necromant2005",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+
+        "zendframework/zend-session": "*",
+        "zendframework/zend-http": "*",
+        "zendframework/zend-stdlib": "*",
+        "necromant2005/zend-generator": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TweeServerLessSession\\": "src/"
+        }
+    }
+}
