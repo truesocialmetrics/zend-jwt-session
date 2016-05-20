@@ -43,7 +43,7 @@ class ServerLess implements SaveHandlerInterface
         return $this->response;
     }
 
-    public function setCrypter(Crypter $crypter)
+    public function setCrypter(CrypterInterface $crypter)
     {
         return $this->crypter = $crypter;
     }
