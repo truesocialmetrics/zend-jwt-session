@@ -9,7 +9,7 @@ class SessionManagerFactory
     public function __invoke(ServiceLocatorInterface $container)
     {
         $manager      = new SessionManager();
-        $manager->setSaveHandler($container->get('TweeServerLessSession\Session\SaveHandler\StorageLess'));
+        $manager->setSaveHandler($container->get('TweeServerLessSession\Session\SaveHandler\ServerLess'));
 
         return $manager;
     }
