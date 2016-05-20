@@ -1,6 +1,8 @@
 <?php
 namespace TweeServerLessSession\Session\Crypter;
 
+use Zend\Stdlib\ArrayObject;
+
 class CleanupDecorator extends AbstractDecorator
 {
     public function encrypt($data)
