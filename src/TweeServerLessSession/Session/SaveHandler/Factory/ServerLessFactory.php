@@ -11,7 +11,7 @@ class ServerLessFactory
         return new ServerLess(
             $container->get('request'),
             $container->get('response'),
-            $container->get('TweeServerLessSessionn\Session\Crypter')
+            $container->get('TweeServerLessSession\Session\Crypter')
         );
     }
 }
