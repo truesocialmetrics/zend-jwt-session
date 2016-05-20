@@ -1,5 +1,5 @@
 <?php
-namespace TweeServerLessSession\Session;
+namespace TweeServerLessSession\Session\Crypter;
 
 class CleanupDecorator extends AbstractDecorator
 {
