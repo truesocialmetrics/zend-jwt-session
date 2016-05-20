@@ -10,7 +10,7 @@ use Zend\Stdlib\ResponseInterface as ResponseInterface;
 
 use Zend\Http\Header\SetCookie as HeaderSetCookie;
 
-class StorageLess implements SaveHandlerInterface
+class ServerLess implements SaveHandlerInterface
 {
     protected $request  = null;
     protected $response = null;

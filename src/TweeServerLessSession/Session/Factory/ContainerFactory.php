@@ -8,7 +8,7 @@ class ContainerFactory
 {
     public function __invoke(ServiceLocatorInterface $container)
     {
-        $config = $container->get('config')['di']['Zend\Session\Container'];
+        $config = $container->get('config')['di']['instance']['Zend\Session\Container'];
         return new Container($config['parameters']['name'], $container->get('Zend\Session\SessionManager'));
     }
 }

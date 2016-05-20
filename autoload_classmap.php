@@ -8,5 +8,5 @@ return array(
     'TweeServerLessSession\Session\Factory\CrypterFactory'                => __DIR__ . '/src/TweeServerLessSession/Session/Factory/CrypterFactory.php',
     'TweeServerLessSession\Session\Factory\SessionManagerFactory'         => __DIR__ . '/src/TweeServerLessSession/Session/Factory/SessionManagerFactory.php',
     'TweeServerLessSession\Session\SaveHandler\Factory\ServerLessFactory' => __DIR__ . '/src/TweeServerLessSession/Session/SaveHandler/Factory/ServerLessFactory.php',
-    'TweeServerLessSession\Session\SaveHandler\StorageLess'               => __DIR__ . '/src/TweeServerLessSession/Session/SaveHandler/ServerLess.php',
+    'TweeServerLessSession\Session\SaveHandler\ServerLess'                => __DIR__ . '/src/TweeServerLessSession/Session/SaveHandler/ServerLess.php',
 );
