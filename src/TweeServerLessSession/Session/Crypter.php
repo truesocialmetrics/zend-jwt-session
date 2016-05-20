@@ -37,7 +37,7 @@ class Crypter implements CrypterInterface
         $hmac = hash_hmac(
             'SHA256',
             $iv . $ciphertext,
-            mb_substr($key, 32, null, '8bit'),
+            mb_substr($this->getKey(), 32, null, '8bit'),
             true
         );
         return $hmac . $iv . $ciphertext;

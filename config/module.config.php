@@ -3,6 +3,11 @@
 return [
     'di' => [
         'instance' => [
+            'TweeServerLessSession\Session' => [
+                'parameters' => [
+                    'key' => '', // setup session encyption key
+                ],
+            ],
             'Zend\Session\Container' => [
                 'parameters' => [
                     'name' => 'Default',
