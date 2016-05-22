@@ -87,6 +87,18 @@ class ServerLess implements SaveHandlerInterface
 
     public function write($sessionId, $sessionData)
     {
+        $cookie = $this->getRequest()->getCookie();
+        if (!$cookie
+            || !$cookie->offsetExists(ini_get('session.name'))
+            || !$cookie->offsetGet(ini_get('session.name'))) {
+            $header = new HeaderSetCookie();
+            $header->setName(ini_get('session.name'));
+            $header->setValue($sessionId);
+            $header->setPath('/');
+            $header->setHttponly(true);
+            $this->getResponse()->getHeaders()->addHeader($header);
+        }
+
         $header = new HeaderSetCookie();
         $header->setName(ini_get('session.name') . '_' . $sessionId);
         $header->setValue($this->getCrypter()->encrypt($sessionData));
