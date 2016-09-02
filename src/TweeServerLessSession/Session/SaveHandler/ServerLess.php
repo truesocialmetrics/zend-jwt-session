@@ -82,7 +82,8 @@ class ServerLess implements SaveHandlerInterface
         if (empty($crypted)) {
             return '';
         }
-        return $this->getCrypter()->decrypt($crypted);
+
+        return (string) $this->getCrypter()->decrypt($crypted);
     }
 
     public function write($sessionId, $sessionData)
@@ -105,6 +106,8 @@ class ServerLess implements SaveHandlerInterface
         $header->setPath('/');
         $header->setHttponly(true);
         $this->getResponse()->getHeaders()->addHeader($header);
+
+        return true;
     }
 
     public function destroy($sessionId)
@@ -116,5 +119,7 @@ class ServerLess implements SaveHandlerInterface
         $header->setPath('/');
         $header->setHttponly(true);
         $this->getResponse()->getHeaders()->addHeader($header);
+
+        return true;
     }
 }
